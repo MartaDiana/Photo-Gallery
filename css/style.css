@@ -168,3 +168,33 @@ footer p {
 .social a:hover {
   color: rgba(13, 29, 53, 0.534);
 }
+
+/* navigasi */
+.next {
+  position: absolute;
+  top: 43%;
+  height: 100px;
+  width: 100px;
+  background-image: url("../img/bottom/next.png");
+  filter: contrast(60%);
+  transition: 0.3s;
+}
+
+.next:hover {
+  filter: contrast(0%);
+}
+
+.previous {
+  position: absolute;
+  background-image: url("../img/bottom/pre.png");
+  height: 100px;
+  width: 100px;
+  top: 43%;
+  left: 125px;
+  filter: contrast(60%);
+  transition: 0.3s;
+}
+
+.previous:hover {
+  filter: contrast(0%);
+}
