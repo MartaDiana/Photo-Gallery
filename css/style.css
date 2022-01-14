@@ -90,9 +90,9 @@ li {
   overflow: hidden;
   position: fixed;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0);
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0);
   z-index: 9999;
   transition: 0.7s;
   padding: 100px 0;
@@ -112,7 +112,7 @@ li {
 }
 
 .overlay:target img {
-  animation: zoomnfade 0.8s;
+  animation: Fade 0.8s;
 }
 
 .overlay .close {
@@ -170,14 +170,24 @@ footer p {
 }
 
 /* navigasi */
-.next {
+.next,
+.previous {
   position: absolute;
   top: 43%;
   height: 100px;
   width: 100px;
   background-image: url("../img/bottom/next.png");
-  filter: contrast(60%);
   transition: 0.3s;
+  filter: contrast(60%);
+  opacity: 0;
+}
+
+.overlay:target .next {
+  animation: Fade 0.5s 0.5s forwards;
+}
+
+.overlay:target .previous {
+  animation: Fade 0.5s 0.5s forwards;
 }
 
 .next:hover {
@@ -185,16 +195,19 @@ footer p {
 }
 
 .previous {
-  position: absolute;
   background-image: url("../img/bottom/pre.png");
-  height: 100px;
-  width: 100px;
-  top: 43%;
-  left: 125px;
-  filter: contrast(60%);
-  transition: 0.3s;
+  margin-left: -100px;
 }
 
 .previous:hover {
   filter: contrast(0%);
+}
+
+@keyframes Fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
